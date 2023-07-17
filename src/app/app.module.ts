@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 // import { LayoutComponent } from './modules/layout/layout.component';
 // import { LoginComponent } from './modules/login/login.component';
 // import { MyProjectsComponent } from './modules/my-projects/my-projects.component';
@@ -92,6 +93,7 @@ export function MSALGuardConfigFactory(): MsalGuardConfiguration {
     BrowserModule,
     AppRoutingModule,
     MsalModule,
+
     // LoginModule,
     // LayoutModule,
     // BrowserAnimationsModule,

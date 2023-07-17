@@ -1,0 +1,13 @@
+.nav-bar {
+  background-color: var(--comp-background-default);
+  .nav-icon {
+    width: 48px;
+  }
+  .expand-nav-icon {
+    display: none;
+  }
+  ul,
+  li {
+    list-style-type: none;
+  }
+}
