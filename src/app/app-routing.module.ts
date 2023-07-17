@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MsalGuard } from '@azure/msal-angular';
 import { azureAuth } from './auth.guard';
+import { HeaderComponent } from './shared/components/header/header.component';
 
 const routes: Routes = [
   {
@@ -15,7 +16,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/layout/layout.module').then((m) => m.LayoutModule),
     canActivate: [MsalGuard],
-  },
+  }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

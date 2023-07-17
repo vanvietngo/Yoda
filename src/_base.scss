@@ -1,0 +1,31 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin-right: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    line-height: 1;
+    background-color: white;
+    padding: 5rem;
+    color: $header-color;
+    font-weight: 400;
+    overflow-x: hidden;
+}
