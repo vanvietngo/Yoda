@@ -1,1 +1,18 @@
-<p>navbar works!</p>
+<div class="nav-bar h-full">
+  <div class="nav-icon">
+    <div *ngFor="let item of appMenus">
+      <button
+        class="p-0 nav-bar-btn block"
+        (click)="onClick(item)"
+        [ngClass]="{ selectedmenu: selectedMenu(item) }"
+      >
+        <yoda-svg-icon [path]="item.key"></yoda-svg-icon>
+      </button>
+    </div>
+  </div>
+  <div class="expand-nav-icon">
+    <ul>
+      <li>232323</li>
+    </ul>
+  </div>
+</div>

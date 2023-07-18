@@ -27,7 +27,11 @@
             "styles": [
               "src/styles.scss",
               "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
-              "node_modules/primeng/resources/primeng.min.css"
+              "node_modules/primeng/resources/primeng.min.css",
+              "./node_modules/@fortawesome/fontawesome-free/css/solid.min.css",
+              "./node_modules/@fortawesome/fontawesome-free/css/regular.min.css",
+              "./node_modules/@fortawesome/fontawesome-free/css/brands.min.css",
+              "./node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css"
             ],
             "scripts": []
           },
@@ -97,5 +101,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "712b658d-e794-4caa-9102-e0dd4618a4f0"
   }
 }

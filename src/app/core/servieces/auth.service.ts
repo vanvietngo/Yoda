@@ -1,57 +1,19 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import {
-  AuthenticationResult,
-  EventMessage,
-  EventType,
-  InteractionStatus,
-  InteractionType,
-  PopupRequest,
-  RedirectRequest,
-} from '@azure/msal-browser';
-import {
-  MsalBroadcastService,
-  MsalGuardConfiguration,
-  MsalService,
-  MSAL_GUARD_CONFIG,
-} from '@azure/msal-angular';
-import { filter, Subject, takeUntil } from 'rxjs';
+import { Inject, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { MSAL_GUARD_CONFIG, MsalGuardConfiguration, MsalService } from '@azure/msal-angular';
+import { AuthenticationResult, InteractionType, PopupRequest, RedirectRequest } from '@azure/msal-browser';
 
-@Component({
-  selector: 'yoda-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+@Injectable({
+  providedIn: 'root',
 })
-export class LoginComponent implements OnInit {
+export class AuthService {
   loginDisplay = false;
-  private readonly _destroying$ = new Subject<void>();
 
   constructor(
-    private authService: MsalService,
-    private msalBroadcastService: MsalBroadcastService,
     private router: Router,
+    private authService: MsalService,
     @Inject(MSAL_GUARD_CONFIG) private msalGuardConfig: MsalGuardConfiguration
   ) {}
-  ngOnInit(): void {
-    this.msalBroadcastService.msalSubject$
-      .pipe(
-        filter((msg: EventMessage) => msg.eventType === EventType.LOGIN_SUCCESS)
-      )
-      .subscribe((result: EventMessage) => {
-        console.log(result);
-        const payload = result.payload as AuthenticationResult;
-        this.authService.instance.setActiveAccount(payload.account);
-        this.router.navigate(['/my-projects']);
-      });
-
-    this.msalBroadcastService.inProgress$
-      .pipe(
-        filter((status: InteractionStatus) => status === InteractionStatus.None)
-      )
-      .subscribe(() => {
-        this.setLoginDisplay();
-      });
-  }
 
   login() {
     if (this.msalGuardConfig.interactionType === InteractionType.Popup) {
@@ -96,9 +58,12 @@ export class LoginComponent implements OnInit {
     this.loginDisplay = this.authService.instance.getAllAccounts().length > 0;
     if (this.loginDisplay) {
       this.router.navigate(['/my-projects']);
-      console.log("opop", this.authService.instance.getAllAccounts());
     } else {
       this.router.navigate(['/login']);
     }
+  }
+
+  getActiveAccount() {
+    return this.authService.instance.getActiveAccount();
   }
 }

@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 // import { LayoutComponent } from './modules/layout/layout.component';
 // import { LoginComponent } from './modules/login/login.component';
 // import { MyProjectsComponent } from './modules/my-projects/my-projects.component';
@@ -29,6 +30,7 @@ import {
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginModule } from './modules/login/login.module';
 import { LayoutModule } from './modules/layout/layout.module';
+import { HomeComponent } from './modules/home/home.component';
 
 const GRAPH_ENDPOINT = 'Enter_the_Graph_Endpoint_Herev1.0/me';
 
@@ -84,6 +86,7 @@ export function MSALGuardConfigFactory(): MsalGuardConfiguration {
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     // LayoutComponent,
     // LoginComponent,
     // MyProjectsComponent,
@@ -92,6 +95,7 @@ export function MSALGuardConfigFactory(): MsalGuardConfiguration {
     BrowserModule,
     AppRoutingModule,
     MsalModule,
+
     // LoginModule,
     // LayoutModule,
     // BrowserAnimationsModule,

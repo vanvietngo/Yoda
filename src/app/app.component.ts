@@ -1,27 +1,27 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject } from "@angular/core";
 //
 import {
   AuthenticationResult,
   EventMessage,
   EventType,
   InteractionStatus,
-} from '@azure/msal-browser';
+} from "@azure/msal-browser";
 import {
   MsalBroadcastService,
   MsalGuardConfiguration,
   MsalService,
   MSAL_GUARD_CONFIG,
-} from '@azure/msal-angular';
-import { filter, Subject, takeUntil } from 'rxjs';
-import { Router } from '@angular/router';
+} from "@azure/msal-angular";
+import { filter, Subject, takeUntil } from "rxjs";
+import { Router } from "@angular/router";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.scss"],
 })
 export class AppComponent {
-  title = 'Angular 14 - MSAL v2 Quickstart Sample';
+  title = "Angular 14 - MSAL v2 Quickstart Sample";
   isIframe = false;
   loginDisplay = false;
   private readonly _destroying$ = new Subject<void>();
@@ -45,10 +45,10 @@ export class AppComponent {
       )
       .subscribe((result: EventMessage) => {
         if (this.authService.instance.getAllAccounts().length === 0) {
-          window.location.pathname = '/';
+          window.location.pathname = "/";
+          console.log("hihi");
         } else {
           this.setLoginDisplay();
-          console.log('InteractionStatus.Add');
         }
       });
 
@@ -62,7 +62,6 @@ export class AppComponent {
       .subscribe(() => {
         this.setLoginDisplay();
         this.checkAndSetActiveAccount();
-        console.log('InteractionStatus.None');
       });
   }
 
