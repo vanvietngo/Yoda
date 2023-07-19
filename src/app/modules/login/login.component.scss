@@ -1,0 +1,47 @@
+$--faq-body-color: #111921;
+
+:host ::ng-deep {
+  .login {
+    background-image: url("../../../assets/images/background.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    .login-popup {
+      .p-card-body {
+        background-color: $--faq-body-color;
+      }
+      .p-card-content {
+        padding: 0px;
+      }
+      .p-card-footer {
+        padding: 0px;
+        //styleName: Content Primary;
+        font-family: Barlow;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: #818f99;
+      }
+    }
+    .btn-login {
+      height: 32px;
+      border-radius: 4px;
+      border: none;
+      //styleName: Action;
+      font-family: Barlow;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 20px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+    .contact-mail {
+      color: #3275b8;
+    }
+  }
+}

@@ -44,9 +44,9 @@ export class AppComponent {
         )
       )
       .subscribe((result: EventMessage) => {
+        console.log('ACCOUNT_ADDED || ACCOUNT_ADDED || ACCOUNT_ADDED');
         if (this.authService.instance.getAllAccounts().length === 0) {
           window.location.pathname = "/";
-          console.log("hihi");
         } else {
           this.setLoginDisplay();
         }

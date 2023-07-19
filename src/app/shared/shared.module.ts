@@ -9,17 +9,28 @@ import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { ButtonModule } from "primeng/button";
 import { FormsModule } from "@angular/forms";
 import { SvgIconComponent } from './components/svg-icon/svg-icon.component';
+import { CardModule } from 'primeng/card';
+
+const declarations = [
+  HeaderComponent,
+  FooterComponent,
+  NavbarComponent,
+  SvgIconComponent,
+];
+
+const imports = [
+  CommonModule,
+  
+  HttpClientModule,
+  FontAwesomeModule,
+  ButtonModule,
+  FormsModule,
+  CardModule,
+];
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, NavbarComponent, SvgIconComponent],
-  imports: [
-    CommonModule,
-    AngularSvgIconModule.forRoot(),
-    HttpClientModule,
-    FontAwesomeModule,
-    ButtonModule,
-    FormsModule,
-  ],
-  exports: [HeaderComponent, FooterComponent, NavbarComponent],
+  declarations: declarations,
+  imports: [...imports, AngularSvgIconModule.forRoot()],
+  exports: [...declarations, ...imports],
 })
 export class SharedModule {}

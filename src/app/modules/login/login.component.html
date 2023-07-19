@@ -1,3 +1,22 @@
-<p>login works!</p>
-<button (click)="login()" *ngIf="!loginDisplay">Login</button>
-<button (click)="logout()" *ngIf="loginDisplay">Logout</button>
+<div class="login flex justify-content-center align-items-center">
+  <!-- <button (click)="login()" *ngIf="!loginDisplay">Login</button>
+  <button (click)="logout()" *ngIf="loginDisplay">Logout</button> -->
+  <p-card [style]="{ width: '360px' }" styleClass="login-popup">
+    <yoda-svg-icon
+      [path]="'yoda-logo'"
+      class="flex justify-content-center"
+    ></yoda-svg-icon>
+    <button
+      (click)="login()"
+      class="flex justify-content-center align-items-center w-full btn-login mb-4 mt-4"
+    >
+      Login
+    </button>
+    <ng-template pTemplate="footer">
+      <p class="m-0">
+        For access requests, send an email to
+        <a href="YODA@halliburton.com" class="contact-mail">YODA@halliburton.com</a>
+      </p>
+    </ng-template>
+  </p-card>
+</div>

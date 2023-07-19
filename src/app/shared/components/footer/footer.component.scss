@@ -1,10 +1,6 @@
 .footer {
   background-color: var(--comp-background-default);
   height: 30px;
-  .logo-btn {
-    border-radius: 0;
-    border: none;
-  }
   .mid-context {
     font-family: Barlow;
     font-size: 12px;
@@ -13,19 +9,5 @@
     letter-spacing: 0em;
     text-align: center;
     color: var(--faded-color);
-  }
-  .right-context {
-    .text {
-      font-family: Barlow;
-      font-size: 10px;
-      font-weight: 700;
-      line-height: 10px;
-      letter-spacing: 0.02em;
-      text-align: right;
-      color: var(--faded-color);
-    }
-    .symbol {
-      color: var(--faded-color);
-    }
   }
 }

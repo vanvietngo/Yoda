@@ -2,28 +2,21 @@ $circle-icon: #818f99;
 
 .header {
   background-color: var(--comp-background-default);
-
   .nav-bar-btn {
     height: 48px;
     width: 48px;
     border-radius: 0;
     border: none;
-
-    &,
+    background-color: var(--button-bacground-expand);
     &:hover,
     &:focus {
-      //   color: $navbar-btn-foreground;e8eced
-      color: #e8eced;
-
-      //   background-color: $navbar-btn-background;e5181b
-      background-color: #e5181b;
+      color: var(--comp-foreground-default);
+      background-color: var(--button-bacground-expand);
     }
   }
-
   .logo {
     color: var(--comp-foreground-default);
   }
-
   .circle-icon {
     color: $circle-icon;
   }
