@@ -1,4 +1,7 @@
-$--faq-body-color: #111921;
+$--login-form-color: #111921;
+$--login-btn-hover-color: #c9cfd4;
+$--login-email-contact-color: #3275b8;
+$--login-text-form-footer-color: #818f99;
 
 :host ::ng-deep {
   .login {
@@ -11,7 +14,7 @@ $--faq-body-color: #111921;
     height: 100vh;
     .login-popup {
       .p-card-body {
-        background-color: $--faq-body-color;
+        background-color: $--login-form-color;
       }
       .p-card-content {
         padding: 0px;
@@ -25,7 +28,7 @@ $--faq-body-color: #111921;
         line-height: 20px;
         letter-spacing: 0em;
         text-align: center;
-        color: #818f99;
+        color: $--login-text-form-footer-color;
       }
     }
     .btn-login {
@@ -39,9 +42,13 @@ $--faq-body-color: #111921;
       line-height: 20px;
       letter-spacing: 0em;
       text-align: left;
+      &:hover {
+        cursor: pointer;
+        background-color: $--login-btn-hover-color;
+      }
     }
-    .contact-mail {
-      color: #3275b8;
+    .contact-email {
+      color: $--login-email-contact-color;
     }
   }
 }
