@@ -33,13 +33,6 @@ export class User {
     return this._username;
   }
 
-  hasRole(role: string): boolean {
-    if (this._roles.length > 0 && this._roles.indexOf(role) !== -1) {
-      return true;
-    }
-    return false;
-  }
-
   get email(): string {
     return this._email;
   }

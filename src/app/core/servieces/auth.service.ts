@@ -64,6 +64,9 @@ export class AuthService {
   }
 
   getActiveAccount() {
+    console.log(
+      "this.authService.instance.getActiveAccount()", this.authService.instance.getActiveAccount()
+    )
     return this.authService.instance.getActiveAccount();
   }
 }

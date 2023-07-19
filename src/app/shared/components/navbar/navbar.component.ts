@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { AppMenu } from "../../models/appMenu.model";
-import { appMenus } from "../../constants/appMenus";
+import { AppMenu } from "@shared/models/appMenu.model";
+import { appMenus } from "@shared/constants/appMenus";
 import { Router } from "@angular/router";
 
 @Component({

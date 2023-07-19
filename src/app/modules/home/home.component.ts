@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/core/servieces/auth.service';
+import { User } from '@core/models/user.model';
 @Component({
   selector: 'yoda-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  userActive: any;
-  constructor(private authService: AuthService) {}
+  constructor(
+    private user: User,
+    ) {}
 
   ngOnInit(): void {
-    this.userActive = this.authService.getActiveAccount();
-    console.log(this.userActive)
+    console.log("this.user.username",this.user.username);
   }
 }

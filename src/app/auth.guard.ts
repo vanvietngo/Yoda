@@ -6,14 +6,19 @@ import {
   RouterStateSnapshot,
   UrlTree,
 } from '@angular/router';
-import { MsalService } from '@azure/msal-angular';
 import { Observable } from 'rxjs';
+import { User } from '@core/models/user.model';
+import { AuthService } from '@core/servieces/auth.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class azureAuth implements CanActivate {
-  constructor(private authService: MsalService, private router: Router) {}
+export class auth implements CanActivate {
+  constructor(
+    private router: Router,
+    private user: User,
+    private authServiceCore: AuthService
+  ) {}
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -22,13 +27,8 @@ export class azureAuth implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    // return true;
-    if (this.authService.instance.getActiveAccount() == null) {
-      console.log('not logged in!');
-      this.router.navigate(['/login']);
-      return false;
-    }
-
+    // this.user.init();
+    this.user.init(this.authServiceCore.getActiveAccount());
     return true;
   }
 }

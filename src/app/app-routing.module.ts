@@ -1,20 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MsalGuard } from '@azure/msal-angular';
-import { azureAuth } from './auth.guard';
+import { auth } from './auth.guard';
 
 const routes: Routes = [
   {
     path: 'login',
     loadChildren: () =>
       import('./modules/login/login.module').then((m) => m.LoginModule),
-    // canActivate: [azureAuth],
   },
   {
     path: '',
     loadChildren: () =>
       import('./modules/layout/layout.module').then((m) => m.LayoutModule),
-    canActivate: [MsalGuard],
+    canActivate: [MsalGuard, auth],
   },
 ];
 @NgModule({

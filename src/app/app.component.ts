@@ -14,26 +14,25 @@ import {
 } from "@azure/msal-angular";
 import { filter, Subject, takeUntil } from "rxjs";
 import { Router } from "@angular/router";
+import { AuthService } from "@core/servieces/auth.service";
 
 @Component({
-  selector: "app-root",
-  templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.scss"],
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = "Angular 14 - MSAL v2 Quickstart Sample";
-  isIframe = false;
   loginDisplay = false;
   private readonly _destroying$ = new Subject<void>();
 
   constructor(
     @Inject(MSAL_GUARD_CONFIG) private msalGuardConfig: MsalGuardConfiguration,
     private authService: MsalService,
-    private msalBroadcastService: MsalBroadcastService
+    private msalBroadcastService: MsalBroadcastService,
+    private authServiceCore: AuthService,
   ) {}
 
   ngOnInit(): void {
-    this.isIframe = window !== window.parent && !window.opener;
     this.authService.instance.enableAccountStorageEvents(); // Optional - This will enable ACCOUNT_ADDED and ACCOUNT_REMOVED events emitted when a user logs in or out of another tab or window
     this.msalBroadcastService.msalSubject$
       .pipe(
@@ -46,7 +45,7 @@ export class AppComponent {
       .subscribe((result: EventMessage) => {
         console.log('ACCOUNT_ADDED || ACCOUNT_ADDED || ACCOUNT_ADDED');
         if (this.authService.instance.getAllAccounts().length === 0) {
-          window.location.pathname = "/";
+          window.location.pathname = '/';
         } else {
           this.setLoginDisplay();
         }
@@ -63,6 +62,7 @@ export class AppComponent {
         this.setLoginDisplay();
         this.checkAndSetActiveAccount();
       });
+      
   }
 
   setLoginDisplay() {
