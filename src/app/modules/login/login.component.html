@@ -1,6 +1,9 @@
 <div class="login flex justify-content-center align-items-center">
   <!-- <button (click)="login()" *ngIf="!loginDisplay">Login</button>
   <button (click)="logout()" *ngIf="loginDisplay">Logout</button> -->
+  <div class="header-login absolute top-0 left-0 w-full flex align-items-center">
+    <yoda-svg-icon [path]="'hal-logo-text-white'" class=" ml-4"></yoda-svg-icon>
+  </div>
   <p-card [style]="{ width: '360px' }" styleClass="login-popup">
     <yoda-svg-icon
       [path]="'yoda-logo'"
@@ -15,7 +18,9 @@
     <ng-template pTemplate="footer">
       <p class="m-0">
         For access requests, send an email to
-        <a href="YODA@halliburton.com" class="contact-mail">YODA@halliburton.com</a>
+        <a href="YODA@halliburton.com" class="contact-mail"
+          >YODA@halliburton.com</a
+        >
       </p>
     </ng-template>
   </p-card>

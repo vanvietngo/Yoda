@@ -1,4 +1,5 @@
 $--faq-body-color: #111921;
+$--hightlight-text-link: #3275b8;
 
 :host ::ng-deep {
   .login {
@@ -9,6 +10,7 @@ $--faq-body-color: #111921;
     background-size: cover;
     width: 100vw;
     height: 100vh;
+
     .login-popup {
       .p-card-body {
         background-color: $--faq-body-color;
@@ -28,6 +30,7 @@ $--faq-body-color: #111921;
         color: #818f99;
       }
     }
+
     .btn-login {
       height: 32px;
       border-radius: 4px;
@@ -41,7 +44,11 @@ $--faq-body-color: #111921;
       text-align: left;
     }
     .contact-mail {
-      color: #3275b8;
+      color: $--hightlight-text-link;
+    }
+    .header-login {
+      height: 30px;
+      background-color: $--faq-body-color;
     }
   }
 }
