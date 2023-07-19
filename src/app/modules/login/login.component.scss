@@ -12,6 +12,7 @@ $--login-text-form-footer-color: #818f99;
     background-size: cover;
     width: 100vw;
     height: 100vh;
+
     .login-popup {
       .p-card-body {
         background-color: $--login-form-color;
@@ -31,6 +32,7 @@ $--login-text-form-footer-color: #818f99;
         color: $--login-text-form-footer-color;
       }
     }
+
     .btn-login {
       height: 32px;
       border-radius: 4px;
