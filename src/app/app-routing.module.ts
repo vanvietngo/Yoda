@@ -9,11 +9,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/login/login.module').then((m) => m.LoginModule),
   },
-          {
+  {
     path: '',
     loadChildren: () =>
       import('./modules/layout/layout.module').then((m) => m.LayoutModule),
-               canActivate: [MsalGuard, AuthGuard],
+    canActivate: [MsalGuard, AuthGuard],
   },
 ];
 @NgModule({
