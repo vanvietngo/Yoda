@@ -2,7 +2,7 @@
   <div class="nav-icon">
     <div *ngFor="let item of appMenus">
       <button
-      pButton
+        pButton
         class="p-0 nav-bar-btn block"
         (click)="onClick(item)"
         [ngClass]="{ selectedmenu: selectedMenu(item) }"
