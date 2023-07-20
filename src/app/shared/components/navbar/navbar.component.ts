@@ -1,12 +1,12 @@
-import { Component, OnInit } from "@angular/core";
-import { AppMenu } from "@shared/models/appMenu.model";
-import { appMenus } from "@shared/constants/appMenus";
-import { Router } from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { AppMenu } from '@shared/models/app-menu.model';
+import { appMenus } from '@shared/constants/appMenus';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: "yoda-navbar",
-  templateUrl: "./navbar.component.html",
-  styleUrls: ["./navbar.component.scss"],
+  selector: 'yoda-navbar',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
   appMenus: AppMenu[] = appMenus;

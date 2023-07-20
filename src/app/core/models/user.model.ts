@@ -37,7 +37,4 @@ export class User {
     return this._email;
   }
 
-  get roles(): string[] {
-    return this._roles;
-  }
 }

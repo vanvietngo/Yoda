@@ -22,6 +22,7 @@ import { AuthService } from "@core/servieces/auth.service";
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  title='yoda'
   loginDisplay = false;
   private readonly _destroying$ = new Subject<void>();
 

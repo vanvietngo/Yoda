@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MsalGuard } from '@azure/msal-angular';
-import { auth } from './auth.guard';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {
@@ -13,7 +13,7 @@ const routes: Routes = [
     path: '',
     loadChildren: () =>
       import('./modules/layout/layout.module').then((m) => m.LayoutModule),
-    canActivate: [MsalGuard, auth],
+    canActivate: [MsalGuard, AuthGuard],
   },
 ];
 @NgModule({

@@ -1,0 +1,28 @@
+.nav-bar {
+  background-color: var(--comp-background-default);
+  .nav-icon {
+    width: 48px;
+  }
+  .expand-nav-icon {
+    display: none;
+  }
+  ul,
+  li {
+    list-style-type: none;
+  }
+  .nav-bar-btn {
+    height: 48px;
+    width: 48px;
+    border-radius: 0;
+    border: none;
+    background-color: transparent;
+
+    &:hover {
+      background-color: var(--background-default)!important;
+    }
+
+    &.selectedmenu {
+      background-color: var(--background-default);
+    }
+  }
+}
