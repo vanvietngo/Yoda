@@ -17,11 +17,11 @@ export class AuthGuard implements CanActivate {
   constructor(
     private router: Router,
     private user: User,
-    private authServiceCore: AuthService
+    private authServiceCore: AuthService,
   ) {}
   canActivate(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
+    state: RouterStateSnapshot,
   ):
     | Observable<boolean | UrlTree>
     | Promise<boolean | UrlTree>

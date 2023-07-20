@@ -6,11 +6,9 @@ import { User } from '@core/models/user.model';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  constructor(
-    private user: User,
-    ) {}
+  constructor(private user: User) {}
 
   ngOnInit(): void {
-    console.log("this.user.username",this.user.username);
+    console.log('this.user.username', this.user.username);
   }
 }

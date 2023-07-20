@@ -30,12 +30,14 @@ export class LoginComponent implements OnInit {
     private authService: MsalService,
     private msalBroadcastService: MsalBroadcastService,
     private router: Router,
-    @Inject(MSAL_GUARD_CONFIG) private msalGuardConfig: MsalGuardConfiguration
+    @Inject(MSAL_GUARD_CONFIG) private msalGuardConfig: MsalGuardConfiguration,
   ) {}
   ngOnInit(): void {
     this.msalBroadcastService.msalSubject$
       .pipe(
-        filter((msg: EventMessage) => msg.eventType === EventType.LOGIN_SUCCESS)
+        filter(
+          (msg: EventMessage) => msg.eventType === EventType.LOGIN_SUCCESS,
+        ),
       )
       .subscribe((result: EventMessage) => {
         console.log(result);
@@ -46,7 +48,9 @@ export class LoginComponent implements OnInit {
 
     this.msalBroadcastService.inProgress$
       .pipe(
-        filter((status: InteractionStatus) => status === InteractionStatus.None)
+        filter(
+          (status: InteractionStatus) => status === InteractionStatus.None,
+        ),
       )
       .subscribe(() => {
         this.setLoginDisplay();
@@ -96,7 +100,7 @@ export class LoginComponent implements OnInit {
     this.loginDisplay = this.authService.instance.getAllAccounts().length > 0;
     if (this.loginDisplay) {
       this.router.navigate(['/my-projects']);
-      console.log("opop", this.authService.instance.getAllAccounts());
+      console.log('opop', this.authService.instance.getAllAccounts());
     } else {
       this.router.navigate(['/login']);
     }

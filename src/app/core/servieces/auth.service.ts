@@ -1,7 +1,16 @@
 import { Inject, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { MSAL_GUARD_CONFIG, MsalGuardConfiguration, MsalService } from '@azure/msal-angular';
-import { AuthenticationResult, InteractionType, PopupRequest, RedirectRequest } from '@azure/msal-browser';
+import {
+  MSAL_GUARD_CONFIG,
+  MsalGuardConfiguration,
+  MsalService,
+} from '@azure/msal-angular';
+import {
+  AuthenticationResult,
+  InteractionType,
+  PopupRequest,
+  RedirectRequest,
+} from '@azure/msal-browser';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +21,7 @@ export class AuthService {
   constructor(
     private router: Router,
     private authService: MsalService,
-    @Inject(MSAL_GUARD_CONFIG) private msalGuardConfig: MsalGuardConfiguration
+    @Inject(MSAL_GUARD_CONFIG) private msalGuardConfig: MsalGuardConfiguration,
   ) {}
 
   login() {
@@ -65,8 +74,9 @@ export class AuthService {
 
   getActiveAccount() {
     console.log(
-      "this.authService.instance.getActiveAccount()", this.authService.instance.getActiveAccount()
-    )
+      'this.authService.instance.getActiveAccount()',
+      this.authService.instance.getActiveAccount(),
+    );
     return this.authService.instance.getActiveAccount();
   }
 }

@@ -11,7 +11,7 @@ export class LayoutComponent implements OnInit {
   constructor(
     private _themeService: ThemeService,
     private user: User,
-    private authServiceCore: AuthService
+    private authServiceCore: AuthService,
   ) {}
 
   ngOnInit(): void {

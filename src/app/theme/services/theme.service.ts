@@ -25,7 +25,7 @@ export class ThemeService {
     Object.keys(this.activeTheme.properties).forEach((property) => {
       document.documentElement.style.setProperty(
         property,
-        this.activeTheme.properties[property]
+        this.activeTheme.properties[property],
       );
     });
   }

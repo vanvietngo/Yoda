@@ -23,6 +23,6 @@ export const dark: Theme = {
 };
 
 export const light: Theme = {
-  name: "light",
+  name: 'light',
   properties: {},
 };

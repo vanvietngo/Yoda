@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from "@angular/core";
-import { SvgStyleModel } from "@shared/models/svg.model";
+import { Component, Input, OnInit } from '@angular/core';
+import { SvgStyleModel } from '@shared/models/svg.model';
 
 @Component({
   selector: 'yoda-svg-icon',

@@ -1,20 +1,20 @@
-import { Component, Inject } from "@angular/core";
+import { Component, Inject } from '@angular/core';
 //
 import {
   AuthenticationResult,
   EventMessage,
   EventType,
   InteractionStatus,
-} from "@azure/msal-browser";
+} from '@azure/msal-browser';
 import {
   MsalBroadcastService,
   MsalGuardConfiguration,
   MsalService,
   MSAL_GUARD_CONFIG,
-} from "@azure/msal-angular";
-import { filter, Subject, takeUntil } from "rxjs";
-import { Router } from "@angular/router";
-import { AuthService } from "@core/servieces/auth.service";
+} from '@azure/msal-angular';
+import { filter, Subject, takeUntil } from 'rxjs';
+import { Router } from '@angular/router';
+import { AuthService } from '@core/servieces/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +22,7 @@ import { AuthService } from "@core/servieces/auth.service";
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title='yoda'
+  title = 'yoda';
   loginDisplay = false;
   private readonly _destroying$ = new Subject<void>();
 
@@ -40,8 +40,8 @@ export class AppComponent {
         filter(
           (msg: EventMessage) =>
             msg.eventType === EventType.ACCOUNT_ADDED ||
-            msg.eventType === EventType.ACCOUNT_REMOVED
-        )
+            msg.eventType === EventType.ACCOUNT_REMOVED,
+        ),
       )
       .subscribe((result: EventMessage) => {
         console.log('ACCOUNT_ADDED || ACCOUNT_ADDED || ACCOUNT_ADDED');
@@ -55,15 +55,14 @@ export class AppComponent {
     this.msalBroadcastService.inProgress$
       .pipe(
         filter(
-          (status: InteractionStatus) => status === InteractionStatus.None
+          (status: InteractionStatus) => status === InteractionStatus.None,
         ),
-        takeUntil(this._destroying$)
+        takeUntil(this._destroying$),
       )
       .subscribe(() => {
         this.setLoginDisplay();
         this.checkAndSetActiveAccount();
       });
-      
   }
 
   setLoginDisplay() {

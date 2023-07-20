@@ -36,5 +36,4 @@ export class User {
   get email(): string {
     return this._email;
   }
-
 }
