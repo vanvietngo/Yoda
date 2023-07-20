@@ -49,13 +49,13 @@
     "typescript": "~4.7.2"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "prettier --write"
-    ]
+    "src/**/*.ts": "prettier --write --ignore-unknown",
+    "src/**/*.html": "prettier --write --ignore-unknown",
+    "src/**/*.scss": "prettier --write --ignore-unknown"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "npx lint-staged"
     }
   }
 }
