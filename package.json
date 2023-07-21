@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "format": "prettier --write \"src/**/*.{ts,html,scss}\"",
-    "prepare": "npx husky install"
+    "prepare": "npx husky install && chmod +x .husky/pre-commit && git config advice.ignoredHook false"
   },
   "private": true,
   "dependencies": {
